@@ -1,0 +1,593 @@
+
+
+/* alt + click để chọn nhiều dòng */
+/* end để về cuối dòng */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family: Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
+}
+
+
+/* common */
+
+.margin-top-16{
+    margin-top: 16px;
+}
+
+
+
+.pull-right{
+    float: right;
+}
+
+.btn{
+    padding: 8px 16px;
+    margin-bottom: 16px;
+    font-size: 15px;
+    text-decoration: none;
+    background-color: #000;
+    display: inline-block;
+    color: #fff;
+    cursor: pointer;
+    border-style: none;
+}
+
+.btn:hover{
+    background-color: #ccc;
+    color: #000;
+}
+
+.margin-bottom-8{
+    margin-bottom: 8px;
+}
+
+.padding-32{
+    padding: 32px 0;
+}
+
+.row{
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+.col{
+    float: left;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.row::after{
+    content:"";
+    display: block;
+    clear:both;
+}
+
+.col-third{
+    width: calc(100%/3);
+}
+
+.col-half{
+    width: 50%;
+}
+
+.col-full{
+    width: 100%;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.margin-bottom-18{
+    margin-bottom: 18px;
+}
+
+
+/* end common */
+
+
+#nav-tiangledown{
+    font-size: 12px;
+}
+
+#nav{
+    display: inline-block;
+}
+
+#nav > li{
+    display: inline-block;
+}
+
+#head .menu-button{
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+#head .menu-button,
+#head .search-button{
+    float: right;
+}
+
+#head .search-button:hover{
+    background-color: #f44336;
+    cursor: pointer;
+}
+
+#head .menu-button:hover{
+    background-color: #ccc;
+    color: black;
+    cursor: pointer;
+}
+
+#head .menu-icon,
+#head .search-icon{
+    color: white;
+    font-size: 16px;
+    line-height: 46px;
+    padding: 12px 24px;
+}
+
+#main{
+
+}
+#head{
+    width: 100%;
+    height: 46px;
+    background-color: black;
+    margin-top: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+/* #nav li{
+    display: inline-block;
+} */
+
+#nav > li{
+    position: relative;
+    display: inline-block;
+}
+
+#nav > li > a{
+    color: white;
+    text-transform: uppercase;
+}
+
+#nav li a{
+    text-decoration: none;
+    line-height: 46px;
+    padding: 0 24px;
+    width: 100%;
+}
+
+#nav .subnav li:hover a,
+#nav > li:hover > a{
+    display: inline-block;
+    background-color: grey;
+    color: black;
+}
+
+#nav li:hover .subnav{
+    display: block;
+}
+
+#nav .subnav{
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    list-style-type: none;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    padding: 0 0px;
+}
+
+#nav .subnav a{
+    color: black;
+    width: 100%;
+    padding: 0 16px;
+    display: block;
+}
+
+
+#slide{
+    position: relative;
+    right: 0;
+    left: 0;
+    margin-top: 46px;
+    padding-top: 50%;
+    background: url('../img/slide.jpg') top center /cover no-repeat;
+    width: 100%;
+    
+}
+
+#slide .text-content{
+    color: white;
+    position: absolute;
+    bottom: 47px;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+#slide .text-head{
+    font-size: 24px;
+    margin-bottom: 16px;
+    font-weight: 400;
+}
+
+
+#content .content-section{
+    width: 800px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 64px 16px;
+}
+
+.content-section .sub-headsection{
+    color: #000;
+    opacity: 0.6;
+    line-height: 22.5px;
+}
+
+#content .content-section .head-section{
+    text-align: center;
+    font-size: 30px;
+    margin: 10px;
+    font-weight: 400;
+    letter-spacing: 4px;
+}
+
+#content .about-section{
+    background-color: white;
+}
+
+
+#content .tour-section {
+    background-color: black;
+}
+
+
+
+.tour-section .content-section .head-section
+{
+    color: #fff;
+    font-size: 30px;
+}
+
+.tour-section .sub-headsection{
+    color: #fff;
+}
+
+
+.tour-section .content-section li{
+    padding: 8px 16px;
+    border-bottom: rgb(221,221,221) solid;
+    background-color: white;
+    border-bottom-width: 0.8px;
+    color: rgb(117,117,117);
+    font-size: 15px;
+    list-style: none;
+    margin-bottom: 0;
+}
+
+.tour-section .list-ticket{
+    margin-top: 40px;
+}
+
+.tour-section .sold-out{
+    background-color: #f44336;
+    color: white;
+    padding: 3px 8px;
+    margin-left: 16px;
+    font-size: 15px;
+}
+
+.tour-section .number{
+    border-radius: 50%;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    float: right;
+    margin-top: -4px;
+    width: 24px;
+    height: 24px;
+    margin-right: 16px;
+    line-height: 24px;
+}
+
+#content .content-section .sub-headsection{
+    text-align: center;
+    font-size: 15px;
+    font-style: italic;
+    opacity: 0.4;
+    margin: 15px;
+}
+
+#content .about-text{
+    text-align: justify;
+    line-height: 1.4;
+}
+
+#content .member-item{
+    float: left;
+    padding: 32px 0px;
+    text-align: center;
+}
+
+#content .member-item-name{
+    font-size: 15px;
+    padding: 15px 0px;
+}
+
+#content .member-img{
+    width: 60%;
+    border-radius: 4px;
+}
+
+#content .member-list{
+    padding: 32px 0px;
+}
+
+#content .clear{
+    clear: both;
+}
+
+
+/* begin footer */
+#footer{
+    padding: 64px 16px;
+    text-align: center;
+    background-color: #f1f1f1;
+}
+
+#footer .list-icon i[class*="ti-"]{
+    font-size: 20px;
+    color: rgba(0,0,0,0.6);
+    line-height: 36px;
+}
+
+#footer .list-icon a{
+    text-decoration: none;
+}
+
+#footer .copyright a,
+#footer .copyright{
+    margin: 15px 0;
+    line-height: 22.5px;
+    font-size: 15px;
+    color: rgba(0,0,0,0.6);
+}
+
+/* end footer */
+
+.tour-section .place-list{
+    
+    padding: 32px 0;
+    margin: 0 -8px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.tour-section .place-list .place-item{
+    padding: 0 8px;
+    margin-bottom: 16px; 
+    flex-basis: calc(100%/3);
+}
+
+.tour-section .place-item img{
+    width: 100%;
+    display:block;
+}
+
+.tour-section .place-item img:hover{
+    opacity: 0.6;
+}
+
+.tour-section .place-item .body{
+    padding: 0 16px;
+    display: inline-block;
+    background-color: #fff;
+    width: 100%;
+}
+
+.tour-section .place-item .head{
+    margin: 15px 0;
+    font-size: 15px;
+    font-weight: 700;
+    color: #000;
+    line-height: 22.5px;
+    display: block;
+}
+
+.tour-section .place-item .content{
+    margin: 15px 0;
+    font-size: 15px;
+    display: block;
+    line-height: 22.5px;
+}
+
+.tour-section .place-item .time{
+    font-size: 15px;
+    line-height: 22.5px;
+    opacity: 0.6;
+    color: #000;
+}
+
+
+
+
+
+/* begin contact */
+
+.contact-section .contact-info i[class*="ti-"]
+{
+    display: inline-block;
+    width: 30px;
+}
+
+.contact-section .contact-info{
+    font-size: 18px;
+    color: #000;
+    line-height: 27px;
+    font-weight: 500;
+}
+
+.contact-section .contact-info a{
+    opacity: 0.8;
+}
+
+
+.contact-section .contact-info a:hover{
+    opacity: 1;
+}
+
+.contact-section .form-control{
+    padding: 8px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    line-height: 22.5px;
+    width: 100%;
+}
+
+
+/* end contact */
+
+
+/* begin map */
+.map{
+    width: 100%;
+    display: block;
+}
+/* end map */
+
+
+
+/* begin js */
+
+.modal{
+    background-color: rgba(0,0,0,0.4);
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal .container{
+    width: 900px;   
+    background-color: #fff;
+    min-height: 200px;
+    position: relative;
+    max-width: calc(100% - 32px);
+    animation: modalFadeIn ease 0.5s;
+}
+
+.modal .modal-header{
+    padding: 42px 16px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 400;
+    letter-spacing: 4px;
+    color: #fff;
+    background-color: #009688;
+}
+
+.modal .modal-header i{
+    margin-right: 16px;
+    color: #000;
+}
+
+.modal .modal-content{
+    padding: 0 16px;
+    display: block;
+}
+
+.modal .modal-content label{
+    margin: 15px 0;
+    display: block;
+    font-size: 15px;
+    line-height: 22.5px;
+    color: #000;
+
+}
+
+.modal .modal-content input{
+    padding: 8px;
+    border: 1px solid #ccc;
+    display: block;
+    width: 100%;
+    line-height: 22.5px;
+}
+
+.modal .modal-content button{
+    padding: 16px;
+    margin : 16px 0;
+    background-color: #009688;
+    color: #fff;
+    font-size: 15px;
+    border-style: none;
+    width: 100%;
+    text-transform: uppercase;
+}
+
+.modal .modal-content button:hover{
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+.modal .modal-foot{
+    padding: 0 16px;
+    margin: 30px 0;
+    text-align: right;
+}
+
+.modal .modal-close{
+    position: absolute;
+    padding: 8px 16px;
+    right: 0;
+    top: 0;
+}
+
+.modal .modal-close i{
+    color: #fff;
+}
+
+.modal .modal-close:hover{
+    cursor: pointer;
+    background-color: red;
+}
+
+.modal.open{
+    display: flex;
+}
+
+@keyframes modalFadeIn{
+    from{
+        transform: translateY(-150px);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+/* dua ve 1 hang */

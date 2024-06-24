@@ -1,0 +1,104 @@
+@media (min-width:64em)
+{
+    .menu-button{
+        display: none;
+    }
+}
+
+@media (max-width:64em){
+    .btn{
+        padding: 14px 16px;
+    }
+
+    input{
+        padding: 14px !important;
+    }
+
+    .list-icon a{
+        padding: 16px;
+    }
+
+    .copy-right a{
+        padding: 15px 0;
+    }
+
+    #nav .subnav a{
+        padding:8px 16px;
+    }
+
+    .contact-section .contact-info {
+        line-height: 2;
+    }
+}
+
+/* css hover cho link */
+
+@media (min-width:46.25em) and (max-width: 64em)
+{
+    .menu-button{
+        display: none;
+    }
+}
+
+@media (max-width: 46.1875em)
+{
+    .s-col-full{
+        width: 100%;
+    }
+
+    .s-full-width{
+        width: 100%;
+    }
+
+    .s-mt-8{
+        margin-top: 8px;
+    }
+
+    .s-mt-16{
+        margin-top: 16px;
+    }
+
+    #content .member-item{
+        padding: 0 0;
+    }
+
+
+    #nav{
+        width: 100%;
+    }
+
+    #nav > li{
+        display: block;
+    }
+
+    #nav > li:first-child{
+        display: inline-block;
+    }
+
+    #nav .subnav{
+        position: initial;
+        background-color: #ccc;
+        padding: 0 26px;
+    }
+
+    #nav .subnav li{
+        padding: 2px 0;
+    }
+
+    #head{
+        overflow: hidden;
+    }
+
+    #head .search-icon{
+        display: none;
+    }
+
+    .menu-button{
+        display: inline;
+    }
+
+    .place-list{
+        flex-direction: column;
+    }
+}
+
